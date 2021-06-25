@@ -5,7 +5,7 @@
     <div class="row text-center">
             <div class="col-lg-2 offset-lg-3 col-md-4 offset-md-2 col-6 displayEl">
                 <% dataObject.forEach(function(data) {%>
-                    <a href="<%= data.id%>" class="list-group-item text-dark">
+                    <a href="/customer/<%= data.id%>" class="list-group-item text-dark">
                         <%=data.firstName%>
                     </a>
                     <%});

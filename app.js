@@ -79,7 +79,9 @@ app.get('/', (req, res) => {
 
 //GET Page '/customer'
 app.get('/customer/:id', (req, res) => {
-    res.render('customer')
+  const resultat = dataObject.find( obj => obj.id === +req.params.id); // Affiche l'object en fonction de l'ID
+  res.send(resultat);
+    //res.render('customer')
 })
 
 
