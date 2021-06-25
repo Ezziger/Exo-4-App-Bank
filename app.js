@@ -4,7 +4,11 @@ const express = require('express'),
       LocalStorage = require('node-localstorage').LocalStorage;
       localStorage = new LocalStorage('./localStorage');
 
-      
+      /* ACTIVE LE BODY PARSER
+      *******************************************************************/
+      app.use(express.json())
+      app.use(express.urlencoded({extended : false}))
+
       
       /* EJS - MOTEUR DE TEMPLATING
       *******************************************************************/
@@ -77,12 +81,27 @@ app.get('/', (req, res) => {
     res.render('index', { dataObject })
 })
 
+// GET Page '/customer/add'
+
+app.get('/customer/add', (req, res) => {
+  res.render('add')
+})
+
+// POST formulaire '/customer/add'
+
+app.post('/customer/add', (req, res) => {
+  const firstName = req.body.firstName;
+  console.log('ajouter :', firstName)
+//  res.render('add')
+})
+
+
 //GET Page '/customer'
 app.get('/customer/:id', (req, res) => {
   const resultat = dataObject.find( obj => obj.id === +req.params.id); // Affiche l'object en fonction de l'ID
-  res.send(resultat);
-    //res.render('customer')
+  res.render('customer', { resultat })
 })
+
 
 
 /* LOCALHOST:3002

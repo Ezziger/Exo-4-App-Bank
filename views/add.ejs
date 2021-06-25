@@ -1,0 +1,24 @@
+<%- include('./partials/header')-%>
+<%- include('./partials/navbar')-%>
+
+<form action="/customer/add" method="post"> <!--Ajoute  un nouveau contenu à la base de données avec la méthode POST-->
+    <div class="form-group">
+      <label for="exampleInputEmail1">Ajouter un prénom</label>
+      <input name="firstName" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Ajouter un nom</label>
+        <input name="lastName" type="text" class="form-control">
+      </div>
+  
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </form>
+
+
+
+
+
+
+
+
+<%- include('./partials/footer')-%>
