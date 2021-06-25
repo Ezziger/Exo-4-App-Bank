@@ -1,0 +1,42 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand {
+    font-size: 3em;
+}
+
+.displayContainer {
+    margin: 50px auto;
+}
+.displayContainer ul {
+    list-style: none;
+}
+
+.displayCustomer {
+    margin: 50px auto;
+}
+
+.newCustomer {
+    margin: 50px auto;
+}
+
+footer h1 {
+    margin: 50px auto;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+    .navbar-brand img {
+        height: 60px;
+        width: 60px;
+    }
+    footer h1 {
+        font-size: 1.5em;
+    }
+  }
