@@ -17,6 +17,7 @@ const express = require('express'),
      *******************************************************************/
     const customersList = [
       {
+        "id": 1,
         "lastName": "SPECIMEN",
         "firstName": "Christophe",
         "credit" : [
@@ -37,6 +38,7 @@ const express = require('express'),
         ]
       },
       {
+        "id": 2,
         "lastName": "DUPONT",
         "firstName": "Francoise",
         "credit" : [
@@ -72,7 +74,7 @@ const express = require('express'),
 
 // GET Page '/'
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('index', { dataObject })
 })
 
 //GET Page '/customer'
