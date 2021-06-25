@@ -1,59 +1,67 @@
 const express = require('express'),
       app = express(),
-      path = require('path');
+      path = require('path'),
+      LocalStorage = require('node-localstorage').LocalStorage;
+      localStorage = new LocalStorage('./localStorage');
 
-
-/* EJS - MOTEUR DE TEMPLATING
-*******************************************************************/
-app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-
-/* BASE DE DONNEES CUSTOMERS
-*******************************************************************/
-const customersList = [
-    {
+      
+      
+      /* EJS - MOTEUR DE TEMPLATING
+      *******************************************************************/
+     app.set('view engine', 'ejs');
+     app.use(express.static(path.join(__dirname, 'public')));
+     
+     
+     
+     /* BASE DE DONNEES CUSTOMERS
+     *******************************************************************/
+    const customersList = [
+      {
         lastName: "SPECIMEN",
         firstName: "Christophe",
         credit : [
-            {
-                salaire : 1200
-            },
-            {
-                prime : 500
-            },
+          { 
+            salaire : 1200
+          },
+          {
+            prime : 500
+          },
         ],
         debit : [
-            {
-                EDF : 50
-            },
-            {
-                Eau : 65
-            }
+          {
+            EDF : 50
+          },
+          {
+            Eau : 65
+          }
         ],
-    },
-    {
+      },
+      {
         lastName: "DUPONT",
         firstName: "Francoise",
         credit : [
-            {
-                salaire : 2200
-            },
-            {
-                prime : 1500
-            },
+          {
+            salaire : 2200
+          },
+          {
+            prime : 1500
+          },
         ],
         debit : [
-            {
-                telephone : 55
-            },
-            {
-                internet : 30
-            }
+          {
+            telephone : 55
+          },
+          {
+            internet : 30
+          }
         ],    }
-]
+      ]
 
+// LOCAL STORAGE
+
+      localStorage.setItem('customer', JSON.stringify(customersList));
+      console.log(localStorage.getItem('customer'));
+      
 
 
 /* CONTROLLERS
