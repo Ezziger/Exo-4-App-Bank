@@ -17,50 +17,53 @@ const express = require('express'),
      *******************************************************************/
     const customersList = [
       {
-        lastName: "SPECIMEN",
-        firstName: "Christophe",
-        credit : [
+        "lastName": "SPECIMEN",
+        "firstName": "Christophe",
+        "credit" : [
           { 
-            salaire : 1200
+            "salaire": 1200
           },
           {
-            prime : 500
+            "prime": 500
           },
         ],
-        debit : [
+        "debit": [
           {
-            EDF : 50
+            "EDF": 50
           },
           {
-            Eau : 65
+            "Eau": 65
           }
-        ],
+        ]
       },
       {
-        lastName: "DUPONT",
-        firstName: "Francoise",
-        credit : [
+        "lastName": "DUPONT",
+        "firstName": "Francoise",
+        "credit" : [
           {
-            salaire : 2200
+            "salaire": 2200
           },
           {
-            prime : 1500
-          },
-        ],
-        debit : [
-          {
-            telephone : 55
-          },
-          {
-            internet : 30
+            "prime": 1500
           }
-        ],    }
+        ],
+        "debit" : [
+          {
+            "telephone" : 55
+          },
+          {
+            "internet" : 30
+          }
+        ]    }
       ]
 
 // LOCAL STORAGE
 
       localStorage.setItem('customer', JSON.stringify(customersList));
-      console.log(localStorage.getItem('customer'));
+     //console.log(localStorage.getItem('customer'));
+      let dataJSON = localStorage.getItem('customer');
+      let dataObject = JSON.parse(dataJSON); // Converti en objet grace a la methode parse
+      //console.log(dataObject[0]);
       
 
 
